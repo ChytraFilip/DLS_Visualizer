@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/ico" href="/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vizualizace pohybu</title>
+    <link href="/main.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div
+      id="inputCard"
+      class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+    >
+      <div class="flex-1">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="dlsCode"
+            >Vložte DLS kód</label
+          >
+          <textarea
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="dlsCode"
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="dlsFile"
+            >Nebo nahrajte .txt soubor:</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="file"
+            id="dlsFile"
+            accept=".txt"
+          />
+        </div>
+        <div class="mt-8 flex justify-center">
+          <button
+            class="btn-visualize bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Vizualizovat
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="plotCard"
+      class="p-6 mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 hidden"
+    >
+      <div id="plot" class="w-full h-64"></div>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

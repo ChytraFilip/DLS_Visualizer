@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+#dlsCode {
+  transition: all 1s ease-in-out;
+  height: 5em;
+}

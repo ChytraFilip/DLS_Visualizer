@@ -1,0 +1,20 @@
+{
+  "name": "my-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "plotly.js-dist": "^2.29.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+}
