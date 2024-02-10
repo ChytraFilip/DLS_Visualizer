@@ -1,4 +1,4 @@
-import { visualize } from "./main.js";
+import visualize from "./main.js";
 
 const inputCard = document.getElementById("inputCard");
 const plotCard = document.getElementById("plotCard");
