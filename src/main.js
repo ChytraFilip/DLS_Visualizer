@@ -69,12 +69,16 @@ function visualizeMovement(code) {
           ", 0, " +
           Math.round(255 * (1 - i / x_movements.length)) +
           ")",
-        colorscale: "Viridis",
         opacity: 0.8,
       },
       line: {
-        color: "darkgray",
-        width: 2,
+        color:
+          "rgb(" +
+          Math.round((255 * i) / x_movements.length) +
+          ", 0, " +
+          Math.round(255 * (1 - i / x_movements.length)) +
+          ")",
+        width: 3,
       },
       name:
         "Step " +
