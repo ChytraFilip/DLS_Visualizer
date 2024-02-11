@@ -6,8 +6,9 @@ function parseMovementCommands(code) {
   const steps = code.split(/STEP \d+ \/ SP \d+/);
   // Initialize current position and movements list
   let current_position = [0.0, 0.0, 0.0]; // [x, y, z]
-  let movements = [[0.0], [0.0], [0.0]]; // [[x1, x2, ...], [y1, y2, ...], [z1, z2, ...]]
+  let movements = [[0.0], [0.0], [0.0], [0]]; // [[x1, x2, ...], [y1, y2, ...], [z1, z2, ...]]
   // Parse each step
+  let index = 1;
   for (let step of steps) {
     // Find all movement commands in the step
     const pattern = /(X|Y|Z)\.ABS (\d+\.\d+)/g;
@@ -27,7 +28,10 @@ function parseMovementCommands(code) {
       for (let i = 0; i < 3; i++) {
         movements[i].push(current_position[i]);
       }
+      movements[3].push(index);
     }
+    // Increment index regardless of whether a movement command was found
+    index++;
   }
   return movements; // [[x1, x2, ...], [y1, y2, ...], [z1, z2, ...]]
 }
@@ -42,6 +46,7 @@ function visualizeMovement(code) {
   const x_movements = movements[0];
   const y_movements = movements[1];
   const z_movements = movements[2];
+  const steps = movements[3];
 
   // Create a separate trace for each step
   let data = [];
@@ -82,7 +87,7 @@ function visualizeMovement(code) {
       },
       name:
         "Step " +
-        (i + 1) +
+        steps[i] +
         ": (" +
         x_movements[i] +
         ", " +
